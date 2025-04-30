@@ -10,15 +10,15 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 $email = trim($_POST['email'] ?? '');
 $password = $_POST['password'] ?? '';
 
-if (!$email || !$password) {
-    die('all fields is required.');
+if (!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($password) < 6) {
+    exit('Invalid');
 }
 
-// проверим, существуем ли email
+// проверка уникальности
 $stmt = $pdo->prepare('SELECT id FROM users WHERE email = ?');
 $stmt->execute([$email]);
 if ($stmt->fetch()) {
-    die('Email is already in use');
+    exit('Email is already in use');
 }
 
 // хешируем пароль и сохраняем

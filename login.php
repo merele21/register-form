@@ -12,7 +12,7 @@ $email = trim($_POST['email'] ?? '');
 $password = $_POST['password'] ?? '';
 
 if (!$email || !$password) {
-    die('All fields is required');
+    exit('All fields is required');
 }
 
 // достаем пользователя
@@ -20,8 +20,8 @@ $stmt = $pdo->prepare('SELECT id, password_hash FROM users WHERE email = ?');
 $stmt->execute([$email]);
 $user = $stmt->fetch();
 
-if (!$user || !$password_verify($password, $user['password_hash'])) {
-    die('Incorrect login or password');
+if (!$user || !password_verify($password, $user['password_hash'])) {
+    exit('Incorrect login or password');
 }
 
 // успешная авторизация

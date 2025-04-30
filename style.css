@@ -134,7 +134,7 @@ header {
     transform: translateX(0);
 }
 
-.wrapper . icon-close {
+.wrapper .icon-close {
     position: absolute;
     top: 0;
     right: 0;
@@ -254,4 +254,9 @@ header {
 
 .login-register p a:hover {
     text-decoration: underline;
+}
+
+.msg.success {
+    color: green;
+    margin-bottom: 15px;
 }
