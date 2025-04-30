@@ -255,3 +255,16 @@ header {
 .login-register p a:hover {
     text-decoration: underline;
 }
+
+/* подсветка полей с ошибкой */
+.input-error {
+    border-bottom-color: red !important;
+}
+
+/* сообщение об ошибке */
+.error-message {
+    display: block;
+    margin-top: 4px;
+    font-size: .75em;
+    color: red;
+}
