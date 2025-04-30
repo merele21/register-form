@@ -134,7 +134,7 @@ header {
     transform: translateX(0);
 }
 
-.wrapper . icon-close {
+.wrapper .icon-close {
     position: absolute;
     top: 0;
     right: 0;
