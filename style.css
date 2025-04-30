@@ -257,8 +257,8 @@ header {
 }
 
 /* подсветка полей с ошибкой */
-.input-error {
-    border-bottom-color: red !important;
+.input-box.error {
+    border-bottom: 2px solid red !important;
 }
 
 /* сообщение об ошибке */
