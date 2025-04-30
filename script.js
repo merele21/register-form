@@ -53,12 +53,13 @@ function validateForm (form) {
         const box = input.closest('.input-box');
         // удаляем старую ошибку
         box.classList.remove('error');
+        input.classList.remove('error');
         box.querySelectorAll('.error-message').forEach(e => e.remove());
 
         if (!input.value.trim()) {
             valid = false;
             // добавляем класс на контейнер
-            input.classList.add('error');
+            box.classList.add('error');
             // создаём подсказку
             const err = document.createElement('span');
             err.classList.add('error-message');
